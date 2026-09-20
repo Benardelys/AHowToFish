@@ -1,0 +1,57 @@
+
+fisherman-lucas:
+  enabled: true
+
+  display-name: "&6&lFisherman Lucas"
+  subtitle: "&7Fish Merchant"
+
+  world: "world"
+
+  location:
+    x: 0.5
+    y: 64.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+
+  entity-type: "VILLAGER"
+
+  skin:
+    type: "TEXTURE"
+    value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWRhZGU4YWEwY2I1NTg1YWRkYjM1ZTM3OGFhYTQ5ZjdmYmYyMTRhNGI4NWNhMmYxNjIxYjM2NWQ2ZTdiZTJkYSJ9fX0="
+
+  hologram:
+    enabled: true
+    lines:
+      - "&6&lFisherman Lucas"
+      - "&7Fish Merchant"
+      - "&e[Right-Click to Sell]"
+
+  interaction:
+    enabled: true
+    range: 4.0
+
+  dialogue:
+    interact: "&6Fisherman Lucas: &7\"Got some fish for me?\""
+    sell: "&6Fisherman Lucas: &7\"Nice catch! I'll take these.\""
+    sell-rare: "&6Fisherman Lucas: &d\"Now that's a beautiful catch!\""
+    empty: "&6Fisherman Lucas: &7\"Come back when you've caught something.\""
+
+  sounds:
+    enabled: true
+    interact: "ENTITY_VILLAGER_YES"
+    sell: "ENTITY_PLAYER_LEVELUP"
+    sell-rare: "UI_TOAST_CHALLENGE_COMPLETE"
+    empty: "ENTITY_VILLAGER_NO"
+
+  particles:
+    enabled: true
+    type: "WATER_SPLASH"
+    interval: 80
+
+  animation:
+    look-at-players: true
+
+  confirmation:
+    enabled: true
+    minimum-value: 10000.0

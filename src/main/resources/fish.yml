@@ -1,0 +1,196 @@
+fish:
+  cod:
+    display-name: "Fresh Cod"
+    material: COD
+    rarity: COMMON
+    weight:
+      min: 0.5
+      max: 4.5
+    sell-price: 25.0
+    xp: 15
+    min-level: 1
+    chance: 40.0
+    lore:
+      - "&7A common saltwater fish found throughout"
+      - "&7ordinary coastlines and river mouths."
+
+  salmon:
+    display-name: "Wild Salmon"
+    material: SALMON
+    rarity: COMMON
+    weight:
+      min: 0.8
+      max: 6.0
+    sell-price: 35.0
+    xp: 20
+    min-level: 1
+    chance: 35.0
+    lore:
+      - "&7A fast swimming river fish known for its"
+      - "&7distinct pink scales and fighting spirit."
+
+  brook_carp:
+    display-name: "Brook Carp"
+    material: COD
+    rarity: COMMON
+    weight:
+      min: 1.0
+      max: 8.0
+    sell-price: 45.0
+    xp: 25
+    min-level: 2
+    chance: 30.0
+    lore:
+      - "&7A resilient bottom-feeder commonly hooked"
+      - "&7in ponds and marshy banks."
+
+  rainbow_trout:
+    display-name: "Rainbow Trout"
+    material: SALMON
+    rarity: UNCOMMON
+    weight:
+      min: 1.5
+      max: 9.0
+    sell-price: 85.0
+    xp: 60
+    min-level: 5
+    chance: 20.0
+    lore:
+      - "&7Gleams with vibrant iridescent colors"
+      - "&7under crystal clear sunlight."
+
+  silver_herring:
+    display-name: "Silver Herring"
+    material: TROPICAL_FISH
+    rarity: UNCOMMON
+    weight:
+      min: 0.3
+      max: 2.5
+    sell-price: 110.0
+    xp: 75
+    min-level: 8
+    chance: 18.0
+    lore:
+      - "&7A dazzling silvery schooling fish that"
+      - "&7darts swiftly across open ocean currents."
+
+  red_snapper:
+    display-name: "Red Snapper"
+    material: TROPICAL_FISH
+    rarity: RARE
+    weight:
+      min: 3.0
+      max: 16.0
+    sell-price: 260.0
+    xp: 180
+    min-level: 15
+    chance: 10.0
+    lore:
+      - "&7A prized catch amongst coastal anglers,"
+      - "&7bearing a striking crimson hue."
+
+  anglerfish:
+    display-name: "Abyssal Angler"
+    material: PUFFERFISH
+    rarity: RARE
+    weight:
+      min: 2.0
+      max: 12.0
+    sell-price: 340.0
+    xp: 240
+    min-level: 20
+    chance: 8.0
+    lore:
+      - "&7Carries a faint glowing bioluminescent"
+      - "&7esca atop its predatory brow."
+
+  sunken_viperfish:
+    display-name: "Sunken Viperfish"
+    material: PUFFERFISH
+    rarity: EPIC
+    weight:
+      min: 4.0
+      max: 22.0
+    sell-price: 850.0
+    xp: 600
+    min-level: 30
+    chance: 4.0
+    lore:
+      - "&7Lurks in pitch black oceanic trenches,"
+      - "&7armed with needle-like translucent fangs."
+
+  ghost_koi:
+    display-name: "Ghost Koi"
+    material: TROPICAL_FISH
+    rarity: EPIC
+    weight:
+      min: 5.0
+      max: 25.0
+    sell-price: 1200.0
+    xp: 850
+    min-level: 35
+    chance: 3.0
+    lore:
+      - "&7An ethereal, semi-translucent koi blessed"
+      - "&7with sacred spectral ripples."
+
+  golden_koi:
+    display-name: "Golden Koi"
+    material: GOLD_NUGGET
+    rarity: LEGENDARY
+    weight:
+      min: 8.0
+      max: 35.0
+    sell-price: 4500.0
+    xp: 2500
+    min-level: 45
+    chance: 1.0
+    lore:
+      - "&7A mythical fish said to bring boundless fortune"
+      - "&7and prosperity to the lucky fisher."
+
+  leviathan_guppy:
+    display-name: "Leviathan Guppy"
+    material: NAUTILUS_SHELL
+    rarity: LEGENDARY
+    weight:
+      min: 15.0
+      max: 60.0
+    sell-price: 7500.0
+    xp: 4000
+    min-level: 55
+    chance: 0.6
+    lore:
+      - "&7A miniature descendant of the prehistoric"
+      - "&7world-shattering oceanic leviathans."
+
+  void_shark:
+    display-name: "Void Shark"
+    material: ECHO_SHARD
+    rarity: MYTHIC
+    weight:
+      min: 50.0
+      max: 250.0
+    sell-price: 25000.0
+    xp: 15000
+    min-level: 70
+    chance: 0.2
+    lore:
+      - "&7Hunts across dimensional rifts and void depths."
+      - "&7Its gaze vibrates with unfathomable pressure."
+
+  eldritch_tentacle:
+    display-name: "Eldritch Sovereign"
+    material: NETHER_STAR
+    rarity: SECRET
+    weight:
+      min: 100.0
+      max: 500.0
+    sell-price: 100000.0
+    xp: 50000
+    min-level: 85
+    chance: 0.05
+    lore:
+      - "&4&lANOMALY FROM THE UNKNOWN DEPTHS"
+      - "&7The fabric of reality warps around this"
+      - "&7unfathomable primordial entity."

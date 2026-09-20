@@ -1,0 +1,10 @@
+rewards:
+  novice_loot:
+    money: 100.0
+    xp: 50
+  adept_loot:
+    money: 500.0
+    xp: 250
+  master_loot:
+    money: 2500.0
+    xp: 1500

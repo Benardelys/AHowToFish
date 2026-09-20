@@ -1,0 +1,75 @@
+baits:
+  worm_bait:
+    display-name: "&aCommon Earthworm Bait"
+    material: WHEAT_SEEDS
+    max-uses: 15
+    cost: 50.0
+    fish-chance-multiplier: 1.15
+    rare-chance-multiplier: 1.0
+    legendary-chance-multiplier: 1.0
+    xp-multiplier: 1.0
+    money-multiplier: 1.0
+    special-effect: "none"
+    lore:
+      - "&7A standard wriggling worm."
+      - "&7Slightly quickens fish bite response."
+
+  glow_bait:
+    display-name: "&eBioluminescent Glow Bait"
+    material: GLOW_INK_SAC
+    max-uses: 20
+    cost: 250.0
+    fish-chance-multiplier: 1.3
+    rare-chance-multiplier: 1.5
+    legendary-chance-multiplier: 1.2
+    xp-multiplier: 1.25
+    money-multiplier: 1.1
+    special-effect: "Luminescent lure"
+    lore:
+      - "&7Glows brilliantly underwater to attract"
+      - "&7curious mid-tier predatory species."
+
+  lucky_bait:
+    display-name: "&bFour-Leaf Clover Chum"
+    material: FERN
+    max-uses: 25
+    cost: 750.0
+    fish-chance-multiplier: 1.4
+    rare-chance-multiplier: 2.0
+    legendary-chance-multiplier: 1.8
+    xp-multiplier: 1.5
+    money-multiplier: 1.3
+    special-effect: "Fortune infusion"
+    lore:
+      - "&7Infused with clover petals and fortune."
+      - "&7Greatly boosts rare catch probability."
+
+  deep_sea_bait:
+    display-name: "&3Deep Trench Chum"
+    material: PRISMARINE_CRYSTALS
+    max-uses: 30
+    cost: 2000.0
+    fish-chance-multiplier: 1.5
+    rare-chance-multiplier: 2.5
+    legendary-chance-multiplier: 2.5
+    xp-multiplier: 2.0
+    money-multiplier: 1.75
+    special-effect: "Abyssal scent"
+    lore:
+      - "&7Carries the scent of crushed trench mollusks."
+      - "&7Draws nocturnal monsters from oceanic depth."
+
+  legendary_chum:
+    display-name: "&6&lKraken Blood Chum"
+    material: MAGMA_CREAM
+    max-uses: 40
+    cost: 10000.0
+    fish-chance-multiplier: 2.0
+    rare-chance-multiplier: 3.5
+    legendary-chance-multiplier: 5.0
+    xp-multiplier: 3.0
+    money-multiplier: 2.5
+    special-effect: "Mythic frenzy"
+    lore:
+      - "&6Potent distill of kraken essence."
+      - "&7Massively escalates legendary encounter chance."

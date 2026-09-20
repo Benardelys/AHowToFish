@@ -1,0 +1,61 @@
+achievements:
+  first_catch:
+    name: "First Tug on the Line"
+    description: "Catch your very first fish in AHowToFish."
+    type: "TOTAL_FISH_CAUGHT"
+    required-value: 1
+    rewards:
+      xp: 50
+      money: 100.0
+      title: "&aNovice Angler"
+
+  century_fisher:
+    name: "Century Fisherman"
+    description: "Reel in 100 fish across your career."
+    type: "TOTAL_FISH_CAUGHT"
+    required-value: 100
+    rewards:
+      xp: 500
+      money: 1000.0
+      title: "&eSeasoned Fisher"
+
+  thousand_catches:
+    name: "Master of the Tides"
+    description: "Reach 1,000 total catches."
+    type: "TOTAL_FISH_CAUGHT"
+    required-value: 1000
+    rewards:
+      xp: 5000
+      money: 15000.0
+      title: "&6Sea Monarch"
+
+  heavyweight_titan:
+    name: "River Monster"
+    description: "Catch a single monstrous fish weighing over 50.0 kg."
+    type: "MAX_WEIGHT_CAUGHT"
+    required-value: 50.0
+    rewards:
+      xp: 3000
+      money: 7500.0
+      title: "&3Behemoth Hunter"
+
+  legendary_contact:
+    name: "Touch of Gold"
+    description: "Land your very first Legendary tier fish."
+    type: "CATCH_RARITY"
+    target: "LEGENDARY"
+    required-value: 1
+    rewards:
+      xp: 2500
+      money: 5000.0
+      title: "&6Golden Hand"
+
+  grandmaster_rank:
+    name: "Grandmaster Angler"
+    description: "Achieve the ultimate Fishing Level 100."
+    type: "REACH_LEVEL"
+    required-value: 100
+    rewards:
+      xp: 50000
+      money: 100000.0
+      title: "&4&lPoseidon Incarnate"

@@ -1,0 +1,77 @@
+rarities:
+  common:
+    display-name: "Common"
+    color: "&f"
+    chance-multiplier: 1.0
+    xp-multiplier: 1.0
+    value-multiplier: 1.0
+    broadcast: false
+    sound: "ENTITY_ITEM_PICKUP"
+    particle: "WATER_SPLASH"
+    permission: ""
+
+  uncommon:
+    display-name: "Uncommon"
+    color: "&a"
+    chance-multiplier: 0.75
+    xp-multiplier: 1.5
+    value-multiplier: 1.5
+    broadcast: false
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    particle: "WATER_BUBBLE"
+    permission: ""
+
+  rare:
+    display-name: "Rare"
+    color: "&9"
+    chance-multiplier: 0.5
+    xp-multiplier: 2.5
+    value-multiplier: 3.0
+    broadcast: false
+    sound: "BLOCK_NOTE_BLOCK_BELL"
+    particle: "GLOW"
+    permission: ""
+
+  epic:
+    display-name: "Epic"
+    color: "&5"
+    chance-multiplier: 0.25
+    xp-multiplier: 5.0
+    value-multiplier: 6.0
+    broadcast: false
+    sound: "BLOCK_AMETHYST_BLOCK_CHIME"
+    particle: "PORTAL"
+    permission: ""
+
+  legendary:
+    display-name: "Legendary"
+    color: "&6"
+    chance-multiplier: 0.1
+    xp-multiplier: 10.0
+    value-multiplier: 15.0
+    broadcast: true
+    sound: "UI_TOAST_CHALLENGE_COMPLETE"
+    particle: "TOTEM_OF_UNDYING"
+    permission: ""
+
+  mythic:
+    display-name: "Mythic"
+    color: "&d"
+    chance-multiplier: 0.03
+    xp-multiplier: 25.0
+    value-multiplier: 40.0
+    broadcast: true
+    sound: "ENTITY_ENDER_DRAGON_GROWL"
+    particle: "DRAGON_BREATH"
+    permission: ""
+
+  secret:
+    display-name: "Secret"
+    color: "&c"
+    chance-multiplier: 0.01
+    xp-multiplier: 50.0
+    value-multiplier: 100.0
+    broadcast: true
+    sound: "BLOCK_BEACON_ACTIVATE"
+    particle: "SONIC_BOOM"
+    permission: ""

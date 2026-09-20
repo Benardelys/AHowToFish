@@ -1,0 +1,47 @@
+settings:
+  random-events-enabled: true
+  interval-minutes: 45
+  chance-percent: 50.0
+
+events:
+  double_xp:
+    name: "Wisdom of the Waves"
+    description: "Fishing yields double XP for all players!"
+    duration-seconds: 600
+    xp-multiplier: 2.0
+    money-multiplier: 1.0
+    rare-multiplier: 1.0
+    legendary-multiplier: 1.0
+    broadcast-start: "&b&l✦ SPECIAL EVENT! &eWisdom of the Waves &7has begun! Double Fishing XP is active for 10 minutes!"
+    broadcast-end: "&c&l✦ EVENT ENDED! &7Wisdom of the Waves has subsided."
+    sound-start: "UI_TOAST_CHALLENGE_COMPLETE"
+    sound-end: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    particle: "ENCHANTMENT_TABLE"
+
+  double_money:
+    name: "Golden Tide"
+    description: "Fish market prices are doubled!"
+    duration-seconds: 600
+    xp-multiplier: 1.0
+    money-multiplier: 2.0
+    rare-multiplier: 1.0
+    legendary-multiplier: 1.0
+    broadcast-start: "&6&l✦ SPECIAL EVENT! &eGolden Tide &7has begun! All fish sell for 2x money for 10 minutes!"
+    broadcast-end: "&c&l✦ EVENT ENDED! &7The Golden Tide has receded."
+    sound-start: "ENTITY_PLAYER_LEVELUP"
+    sound-end: "BLOCK_NOTE_BLOCK_PLING"
+    particle: "TOTEM_OF_UNDYING"
+
+  rare_frenzy:
+    name: "Deepsea Frenzy"
+    description: "Rare and exotic fish bite much more frequently!"
+    duration-seconds: 480
+    xp-multiplier: 1.25
+    money-multiplier: 1.25
+    rare-multiplier: 3.0
+    legendary-multiplier: 2.0
+    broadcast-start: "&d&l✦ SPECIAL EVENT! &eDeepsea Frenzy &7is active! Rare & Legendary encounter rates escalated!"
+    broadcast-end: "&c&l✦ EVENT ENDED! &7The waters return to calm."
+    sound-start: "ENTITY_ELDER_GUARDIAN_CURSE"
+    sound-end: "ENTITY_ITEM_PICKUP"
+    particle: "PORTAL"

@@ -1,0 +1,12 @@
+
+gui:
+  border-material: "BLACK_STAINED_GLASS_PANE"
+  navigation:
+    previous-page-material: "ARROW"
+    next-page-material: "ARROW"
+    back-button-material: "DARK_OAK_DOOR"
+    close-button-material: "BARRIER"
+  sounds:
+    click: "UI_BUTTON_CLICK"
+    open: "BLOCK_CHEST_OPEN"
+    purchase: "ENTITY_PLAYER_LEVELUP"

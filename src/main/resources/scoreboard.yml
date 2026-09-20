@@ -1,0 +1,67 @@
+
+scoreboard:
+  enabled: true
+  update-interval: 20
+
+  normal:
+    title: "&6&l✦ AHowToFish ✦"
+    lines:
+      - "&7&m--------------------"
+      - "&e⚓ Level: &f%ahowtofish_level%"
+      - "&e✦ XP: &f%ahowtofish_xp% &7/ &8%ahowtofish_required_xp%"
+      - "&7"
+      - "&bFish Caught: &f%ahowtofish_fish_caught%"
+      - "&bLargest Fish: &f%ahowtofish_largest_fish%"
+      - "&6Coins: &f%ahowtofish_coins%"
+      - "&7"
+      - "&dZone: &f%ahowtofish_zone%"
+      - "&dActive Rod: &f%ahowtofish_rod%"
+      - "&7"
+      - "&8play.ahowtofish.net"
+      - "&7&m--------------------"
+
+  competition:
+    title: "&6&l✦ TOURNAMENT ✦"
+    lines:
+      - "&7&m--------------------"
+      - "&eTournament: &f%ahowtofish_competition_name%"
+      - "&eTime Left: &a%ahowtofish_competition_time%"
+      - "&7"
+      - "&bYour Score: &e%ahowtofish_competition_score%"
+      - "&bYour Rank: &e#%ahowtofish_competition_position%"
+      - "&7"
+      - "&6Leader: &f%ahowtofish_competition_leader%"
+      - "&6Top Score: &f%ahowtofish_competition_leader_score%"
+      - "&7"
+      - "&aKeep fishing to win!"
+      - "&7&m--------------------"
+
+  event:
+    title: "&d&l✦ SPECIAL EVENT ✦"
+    lines:
+      - "&7&m--------------------"
+      - "&dEvent: &f%ahowtofish_event_name%"
+      - "&dTime Left: &e%ahowtofish_event_time%"
+      - "&7"
+      - "&aBonus Mul: &e%ahowtofish_event_multiplier%x"
+      - "&7"
+      - "&bCatches: &f%ahowtofish_fish_caught%"
+      - "&6Coins: &f%ahowtofish_coins%"
+      - "&7"
+      - "&eMaximized frenzy active!"
+      - "&7&m--------------------"
+
+  quest:
+    title: "&6&l✦ QUEST ACTIVE ✦"
+    lines:
+      - "&7&m--------------------"
+      - "&eQuest: &f%ahowtofish_active_quest%"
+      - "&7"
+      - "&bProgress: &e%ahowtofish_quest_progress% &8/ &f%ahowtofish_quest_required%"
+      - "&cTime Left: &e%ahowtofish_quest_time%"
+      - "&7"
+      - "&eLevel: &f%ahowtofish_level%"
+      - "&6Coins: &f%ahowtofish_coins%"
+      - "&7"
+      - "&8Fisherman Lucas"
+      - "&7&m--------------------"

@@ -1,0 +1,256 @@
+starter:
+  enabled: true
+  first-join-guide: true
+  auto-start: true
+  first-quest: "first-rod"
+  rod:
+    enabled: true
+    item-id: "lucas_starter_rod"
+    name: "&aLucas's Starter Rod"
+    lore:
+      - "&7A handcrafted beginner rod"
+      - "&7gifted by Fisherman Lucas."
+      - "&8Unlocks basic fishing minigame mechanics."
+      - "&e✦ Soulbound"
+    custom-model-data: 10001
+    unbreakable: true
+
+quest-timer:
+  pause-on-disconnect: false
+
+quests:
+  first-rod:
+    name: "Welcome to the Docks"
+    description:
+      - "Speak to Fisherman Lucas at the docks"
+      - "and receive your starter fishing rod."
+    category: "TUTORIAL"
+    objective-type: "RECEIVE_ITEM"
+    target: "lucas_starter_rod"
+    required-amount: 1
+    time-limit-seconds: 0
+    retry-cooldown-seconds: 0
+    next-quest: "cast-your-line"
+    dialogues:
+      offer: "Ah, newcomer! Grab this rod from me. Let's see what you've got!"
+      progress: "Right-click me to claim your starter rod."
+      complete: "Good job! A sturdy rod is an angler's truest friend."
+    rewards:
+      xp: 50
+      money: 100.0
+      sound: "ENTITY_PLAYER_LEVELUP"
+
+  cast-your-line:
+    name: "Cast Your Line"
+    description:
+      - "Cast your fishing line into the water 3 times."
+    category: "TUTORIAL"
+    objective-type: "CAST"
+    required-amount: 3
+    time-limit-seconds: 300
+    retry-cooldown-seconds: 30
+    prerequisites:
+      - "first-rod"
+    next-quest: "first-catch"
+    dialogues:
+      offer: "Head over to the water and cast your line 3 times. Feel the tension in the rod!"
+      progress: "Cast your bobber into the water {current}/{required} times."
+      complete: "Splendid casting form! You're a natural at this."
+    rewards:
+      xp: 100
+      money: 150.0
+      sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+
+  first-catch:
+    name: "Your First Catch"
+    description:
+      - "Land your very first fish from the water."
+    category: "TUTORIAL"
+    objective-type: "CATCH_TOTAL"
+    required-amount: 1
+    time-limit-seconds: 600
+    retry-cooldown-seconds: 60
+    prerequisites:
+      - "cast-your-line"
+    next-quest: "return-lucas"
+    dialogues:
+      offer: "Watch the water ripples closely. When the bobber dips, strike! Reel in your first fish."
+      progress: "Patiently wait for a bite and catch 1 fish."
+      complete: "Whoa, look at that! What a fine specimen!"
+    rewards:
+      xp: 150
+      money: 200.0
+      sound: "ENTITY_PLAYER_LEVELUP"
+
+  return-lucas:
+    name: "Return to Lucas"
+    description:
+      - "Return to Fisherman Lucas and talk to him about your catch."
+    category: "TUTORIAL"
+    objective-type: "TALK_NPC"
+    required-amount: 1
+    time-limit-seconds: 0
+    retry-cooldown-seconds: 0
+    prerequisites:
+      - "first-catch"
+    next-quest: "sell-first-fish"
+    dialogues:
+      offer: "Bring that catch right back to me, let me inspect the scales!"
+      progress: "Right-click Fisherman Lucas at the docks."
+      complete: "Ah, look at the luster on those fins! You're ready to learn about the market."
+    rewards:
+      xp: 75
+      money: 100.0
+      sound: "ENTITY_VILLAGER_YES"
+
+  sell-first-fish:
+    name: "Merchant's Trade"
+    description:
+      - "Sell your caught fish to Fisherman Lucas for shiny coins."
+    category: "TUTORIAL"
+    objective-type: "SELL_FISH"
+    required-amount: 1
+    time-limit-seconds: 600
+    retry-cooldown-seconds: 30
+    prerequisites:
+      - "return-lucas"
+    next-quest: "reach-level-2"
+    dialogues:
+      offer: "Open my merchant stall and sell me your fresh fish. Every angler needs coin in their pouch!"
+      progress: "Sell at least 1 fish in the Lucas Fish Merchant menu."
+      complete: "Coins well earned! Keep selling to fund bigger expeditions."
+    rewards:
+      xp: 150
+      money: 250.0
+      sound: "ENTITY_PLAYER_LEVELUP"
+
+  reach-level-2:
+    name: "Rising Angler"
+    description:
+      - "Gain fishing XP and reach Angler Level 2."
+    category: "TUTORIAL"
+    objective-type: "REACH_LEVEL"
+    required-amount: 2
+    time-limit-seconds: 0
+    retry-cooldown-seconds: 0
+    prerequisites:
+      - "sell-first-fish"
+    next-quest: "rare-fish"
+    dialogues:
+      offer: "Keep fishing and honing your technique until you reach Angler Level 2."
+      progress: "Reach Angler Level 2 (Current Level: {current})."
+      complete: "Level 2 already?! You're making waves in the fishing world!"
+    rewards:
+      xp: 300
+      money: 500.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+
+  rare-fish:
+    name: "Hunting Rarities"
+    description:
+      - "Catch at least 1 fish of UNCOMMON rarity or higher."
+    category: "TUTORIAL"
+    objective-type: "CATCH_RARITY"
+    target: "UNCOMMON"
+    required-amount: 1
+    time-limit-seconds: 900
+    retry-cooldown-seconds: 60
+    prerequisites:
+      - "reach-level-2"
+    next-quest: "upgrade-gear"
+    dialogues:
+      offer: "Common minnows are fine, but true glory lies in rarer depths. Catch an Uncommon fish or better!"
+      progress: "Catch 1 Uncommon+ fish."
+      complete: "Marvelous! That rarity will fetch a handsome bounty on the docks."
+    rewards:
+      xp: 500
+      money: 1000.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+
+  upgrade-gear:
+    name: "Mastering the Craft"
+    description:
+      - "Visit the fishing shop and acquire specialized bait to use while fishing."
+    category: "TUTORIAL"
+    objective-type: "USE_BAIT"
+    required-amount: 1
+    time-limit-seconds: 0
+    retry-cooldown-seconds: 0
+    prerequisites:
+      - "rare-fish"
+    next-quest: ""
+    dialogues:
+      offer: "To conquer the stormy open seas, you'll need specialized bait. Attach and use bait while fishing!"
+      progress: "Use a bait to attract fish."
+      complete: "You have mastered all the fundamentals, angler! The world's oceans now belong to you."
+    rewards:
+      xp: 1000
+      money: 2000.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+
+  daily_fresh_catch:
+    name: "Daily Fresh Catch"
+    description:
+      - "Reel in 15 fish of any variety."
+    category: "DAILY"
+    objective-type: "CATCH_TOTAL"
+    required-amount: 15
+    recurrence: "DAILY"
+    rewards:
+      xp: 150
+      money: 300.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+
+  daily_rare_hunt:
+    name: "Daily Rarity Hunt"
+    description:
+      - "Successfully land 3 fish of Rare tier or above."
+    category: "DAILY"
+    objective-type: "CATCH_RARITY"
+    target: "RARE"
+    required-amount: 3
+    recurrence: "DAILY"
+    rewards:
+      xp: 400
+      money: 750.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+
+  weekly_heavyweight:
+    name: "Weekly Titan Hauler"
+    description:
+      - "Catch a single fish weighing 15 kg or more."
+    category: "WEEKLY"
+    objective-type: "CATCH_WEIGHT"
+    required-amount: 15.0
+    recurrence: "WEEKLY"
+    rewards:
+      xp: 1500
+      money: 3500.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+
+  weekly_commercial_market:
+    name: "Commercial Prosperity"
+    description:
+      - "Earn $10,000 from selling fresh catches."
+    category: "WEEKLY"
+    objective-type: "SELL_VALUE"
+    required-amount: 10000.0
+    recurrence: "WEEKLY"
+    rewards:
+      xp: 2500
+      money: 5000.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"
+
+  perm_master_trench:
+    name: "Expedition to Mariana"
+    description:
+      - "Reel in 50 fish inside the Mariana Void Trench zone."
+    category: "PERMANENT"
+    objective-type: "VISIT_ZONE"
+    target: "abyssal_trench"
+    required-amount: 50
+    recurrence: "PERMANENT"
+    rewards:
+      xp: 8000
+      money: 15000.0
+      sound: "UI_TOAST_CHALLENGE_COMPLETE"

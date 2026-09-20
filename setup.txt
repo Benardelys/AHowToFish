@@ -1,0 +1,341 @@
+================================================================================
+                         AHOWTOFISH - SETUP & ADMINISTRATION GUIDE
+                               Version: 1.0.0 (Paper 1.21.1+ & 26.3+)
+                                      Developer: Ardelys
+================================================================================
+
+TABLE OF CONTENTS:
+  1. Overview & General Features
+  2. System Requirements & Step-by-Step Installation
+  3. All Player Commands & Usage
+  4. All Administrator Commands & Usage
+  5. Permission Nodes List
+  6. Fishing Zone (Habitat) Setup Guide
+  7. Custom Fish & Rarity Configuration (fish.yml & rarities.yml)
+  8. Custom Rods & Bait Mechanics (rods.yml & bait.yml)
+  9. Quests, Achievements & Fisherman Lucas NPC
+  10. Economy, Fish Market & Security Anti-Dupe System
+  11. Database Configuration (SQLite & MySQL/MariaDB)
+  12. Language & Localization Settings (English & Turkish)
+  13. PlaceholderAPI Identifiers
+  14. Configuration Files Summary
+  15. Frequently Asked Questions & Troubleshooting (FAQ)
+
+--------------------------------------------------------------------------------
+1. OVERVIEW & GENERAL FEATURES
+--------------------------------------------------------------------------------
+AHowToFish is an advanced, production-ready RPG fishing and career progression
+plugin developed from scratch for modern Minecraft Paper servers.
+
+Key Highlights:
+* 7 Distinct Rarity Tiers (Common, Uncommon, Rare, Epic, Legendary, Mythic, Secret).
+* Dynamic Weight & Value Scaling: Fish size and weight directly scale financial
+  worth, XP rewards, and leaderboard rankings.
+* 3D Cuboid Fishing Zones (Habitats): Define regional lakes, deep trenches,
+  and special biomes with distinct species and multipliers.
+* Bait System: Equip specialized baits to increase bite speed, catch chance,
+  and legendary encounter probabilities.
+* Custom Upgraded Rods: Grant extra luck, double catch chances, and multipliers.
+* Fish Collection Journal: Interactive Pokédex-style catalog tracking discovered
+  species, total catches, and personal records.
+* Quests & Achievements: Daily/weekly contracts, storyline starter quests,
+  and prestige achievements.
+* Automated Fishing Tournaments: BossBar-tracked live competitions with automated
+  prize payouts and standings broadcast.
+* HMAC-SHA256 Cryptographic Item Security: Complete protection against item duping,
+  NBT tampering, creative-mode spawned fakes, and transaction race conditions.
+
+--------------------------------------------------------------------------------
+2. SYSTEM REQUIREMENTS & STEP-BY-STEP INSTALLATION
+--------------------------------------------------------------------------------
+Requirements:
+* Minecraft Server Core: Paper 1.21.1+ or Paper 26.3+ (Spigot / Purpur compatible)
+* Java Version: Java 21 LTS or newer
+* Economy Integration (Optional but recommended): Vault + EssentialsX / CMI
+* Placeholders (Optional): PlaceholderAPI
+* Region Protection (Optional): WorldGuard
+
+Installation Steps:
+1. Place the compiled "AHowToFish-1.0.0.jar" into your server's "plugins/" folder.
+2. Start the server. The plugin will automatically generate all default configuration
+   files and language templates under "plugins/AHowToFish/".
+3. Configure "config.yml" to adjust level formulas, multipliers, and general
+   settings to match your server economy.
+4. If running a network (BungeeCord / Velocity), open "database.yml" and enter
+   your MySQL or MariaDB credentials. For single servers, SQLite is ready out of the box.
+5. Set your server's default language in "config.yml" ("en" for English, "tr" for Turkish).
+6. Run "/ahowtofish reload" in-game or from console to apply configuration changes.
+7. Setup is complete!
+
+--------------------------------------------------------------------------------
+3. ALL PLAYER COMMANDS & USAGE
+--------------------------------------------------------------------------------
+Main command aliases: /ahowtofish, /fish, /fishing (all interchangeable)
+
+* /fish
+  Opens the main interactive Fishing Hub GUI. Provides one-click access to
+  statistics, collection journal, market, quests, and settings.
+* /fish stats
+  Opens your career statistics menu: level, XP, catches, streak records,
+  and total earnings.
+* /fish collection
+  Opens the Fish Discovery Journal. Discovered species are shown in color;
+  undiscovered species appear as mystery question marks.
+* /fish quests
+  Displays available starter, daily, and weekly contracts.
+* /fish achievements
+  Opens the milestones and achievements progression menu.
+* /fish leaderboard
+  Opens the top angler rankings across levels, catches, and weight records.
+* /fish shop
+  Opens the Fish Market & Tackle Store to purchase baits and sell fish.
+* /fish sell
+  Instantly sells the authenticated custom fish currently held in your main hand.
+* /fish sellall
+  Instantly sells all valid caught fish currently in your inventory.
+* /fish language [en|tr|default]
+  Switches your personal language preference. Use "/fish language default"
+  to follow server default language settings.
+
+--------------------------------------------------------------------------------
+4. ALL ADMINISTRATOR COMMANDS & USAGE
+--------------------------------------------------------------------------------
+Requires "ahowtofish.admin" permission.
+
+* /ahowtofish admin
+  Opens the visual administrative control panel for events, competitions,
+  and hot-reload functions.
+* /ahowtofish reload
+  Hot-reloads all configs, language files, fish types, rods, baits, and zones
+  without server restarts.
+* /ahowtofish give <player> <fish_id> [amount]
+  Gives an authenticated, cryptographically stamped custom fish.
+* /ahowtofish giverod <player> <rod_id>
+  Gives a custom fishing rod with configured durability and multipliers.
+* /ahowtofish givebait <player> <bait_id> [amount]
+  Gives custom fishing bait with active uses.
+* /ahowtofish setlevel <player> <level>
+  Sets the target player's fishing skill level.
+* /ahowtofish setxp <player> <xp>
+  Sets the target player's exact fishing experience points.
+* /ahowtofish addxp <player> <xp>
+  Adds fishing experience points to the target player.
+* /ahowtofish reset <player>
+  Completely resets a player's fishing profile and statistics.
+* /ahowtofish npc set
+  Spawns and anchors Fisherman Lucas NPC at your current location and yaw/pitch.
+* /ahowtofish npc remove
+  Removes the Fisherman Lucas NPC from the world.
+* /ahowtofish npc tp
+  Teleports you directly to Fisherman Lucas.
+* /ahowtofish competition start <type> <minutes>
+  Starts a live fishing tournament.
+  Types: MOST_FISH, LARGEST_FISH, TOTAL_WEIGHT, HIGHEST_VALUE, MOST_RARE.
+* /ahowtofish competition stop
+  Terminates the currently active fishing tournament early.
+* /ahowtofish event start <event_id> <multiplier> <minutes>
+  Launches a timed global server event (e.g., double_xp, golden_tide).
+* /ahowtofish event stop
+  Stops any running global fishing event.
+* /ahowtofish zone setpos1 / setpos2
+  Sets position 1 and position 2 for 3D cuboid zone selection.
+* /ahowtofish zone create <id> [min_level]
+  Creates a new fishing zone from the selected cuboid boundaries.
+* /ahowtofish zone delete <id>
+  Deletes an existing fishing zone.
+
+--------------------------------------------------------------------------------
+5. PERMISSION NODES LIST
+--------------------------------------------------------------------------------
+Player Permissions:
+* ahowtofish.use                  - Basic permission required to fish and use player commands.
+* ahowtofish.menu                 - Allows opening the /fish GUI hub.
+* ahowtofish.stats                - Allows viewing /fish stats.
+* ahowtofish.collection           - Allows opening the /fish collection journal.
+* ahowtofish.quests               - Allows opening the /fish quests menu.
+* ahowtofish.achievements         - Allows opening the /fish achievements menu.
+* ahowtofish.leaderboard          - Allows opening the /fish leaderboard menu.
+* ahowtofish.shop                 - Allows opening the /fish shop menu.
+* ahowtofish.sell                 - Allows running /fish sell (single hand sell).
+* ahowtofish.sellall              - Allows running /fish sellall (bulk inventory sell).
+
+Administrator Permissions:
+* ahowtofish.admin                - Wildcard permission granting all administrative subcommands.
+* ahowtofish.admin.reload         - Allows running /ahowtofish reload.
+* ahowtofish.admin.give           - Allows spawning fish, rods, and baits.
+* ahowtofish.admin.setlevel       - Allows modifying player levels and XP.
+* ahowtofish.admin.reset          - Allows resetting player fishing profiles.
+* ahowtofish.admin.competition    - Allows starting and stopping tournaments.
+* ahowtofish.admin.event          - Allows managing server-wide fishing events.
+* ahowtofish.admin.zone           - Allows creating and managing fishing zones.
+* ahowtofish.admin.npc            - Allows setting up Fisherman Lucas NPC.
+
+VIP Multiplier Permissions (Optional):
+* ahowtofish.multiplier.x1        - 1.0x standard multiplier
+* ahowtofish.multiplier.x1.5      - 1.5x sell & XP multiplier
+* ahowtofish.multiplier.x2        - 2.0x sell & XP multiplier
+* ahowtofish.multiplier.x3        - 3.0x sell & XP multiplier
+
+--------------------------------------------------------------------------------
+6. FISHING ZONE (HABITAT) SETUP GUIDE
+--------------------------------------------------------------------------------
+Fishing zones let you restrict special fish species to specific lakes, rivers,
+or ocean regions.
+
+Creating a Zone:
+1. Stand at the first corner of the body of water and execute:
+   /ahowtofish zone setpos1
+2. Move to the opposite diagonal corner (including depth) and execute:
+   /ahowtofish zone setpos2
+3. Create the zone with an ID and optional minimum required level:
+   /ahowtofish zone create coral_reef 15
+4. Configure "zones.yml" to set display names, XP multipliers, and local species.
+
+--------------------------------------------------------------------------------
+7. CUSTOM FISH & RARITY CONFIGURATION (fish.yml & rarities.yml)
+--------------------------------------------------------------------------------
+Every fish is defined under "plugins/AHowToFish/fish.yml":
+
+Example entry:
+  golden_koi:
+    display-name: "&6Golden Koi"
+    material: GOLD_NUGGET
+    custom-model-data: 1001     # Optional custom texture ID
+    rarity: LEGENDARY           # Configured in rarities.yml
+    weight:
+      min: 12.0                 # Minimum weight in kg
+      max: 45.0                 # Maximum weight in kg
+    sell-price: 3500.0          # Base sell price
+    xp: 1500                    # Fishing XP awarded
+    min-level: 30               # Minimum angler level required
+    chance: 2.5                 # Catch weight probability
+    required-zone: "coral_reef" # Optional: restricted to this zone
+    required-bait: "glow_bait"  # Optional: only bites with this bait
+    lore:
+      - "&7A shimmering golden carp revered by ancient anglers."
+
+--------------------------------------------------------------------------------
+8. CUSTOM RODS & BAIT MECHANICS (rods.yml & bait.yml)
+--------------------------------------------------------------------------------
+Custom Rods:
+Defined in "rods.yml". Rods can feature custom model data, extra durability,
+luck attributes, and catch multipliers.
+
+Custom Baits:
+Defined in "bait.yml". Baits can be purchased from the Tackle Shop or awarded
+via quests. Equipping bait in the off-hand automatically applies bonus bite
+speeds, rare catch multipliers, and extra experience points until its uses deplete.
+
+--------------------------------------------------------------------------------
+9. QUESTS, ACHIEVEMENTS & FISHERMAN LUCAS NPC
+--------------------------------------------------------------------------------
+Fisherman Lucas:
+* Serves as the community guide and fish merchant.
+* Set his location via "/ahowtofish npc set".
+* Players can right-click Lucas to turn in fish, buy baits, and advance through
+  the interactive tutorial quest storyline.
+
+Achievements:
+* 6 core milestones tracking total catches, record weights, rarity catches,
+  and level milestones.
+* Awards bonus money, XP, and titles automatically upon completion.
+
+--------------------------------------------------------------------------------
+10. ECONOMY, MARKET SELLING & SECURITY ANTI-DUPE SYSTEM
+--------------------------------------------------------------------------------
+Security Protections:
+* HMAC-SHA256 Stamped PDC: Every valid fish caught carries a unique UUID,
+  timestamp, weight, species ID, and cryptographic signature in its PersistentDataContainer.
+* If a player creates a fake item using creative mode or external tools, the signature
+  validation fails and the item cannot be sold.
+* Atomic Transaction Locking: Inventory clicks and sale operations are locked per player
+  to eliminate dupe glitches and race conditions.
+* Rate Limiting: High-frequency bot actions and auto-clickers are automatically throttled.
+
+--------------------------------------------------------------------------------
+11. DATABASE CONFIGURATION (SQLite & MySQL/MariaDB)
+--------------------------------------------------------------------------------
+Configure "plugins/AHowToFish/database.yml":
+
+* SQLite (Default):
+  Zero configuration needed. Automatically creates and maintains "plugins/AHowToFish/data.db".
+  Uses WAL (Write-Ahead Logging) and connection pooling for optimal performance.
+
+* MySQL / MariaDB (Networks & Multi-Server):
+  database:
+    type: "MYSQL"
+    mysql:
+      host: "localhost"
+      port: 3306
+      database: "ahowtofish"
+      username: "root"
+      password: "your_password"
+      useSSL: false
+      pool-size: 10
+
+All database operations run asynchronously without causing lag spikes on the main thread.
+
+--------------------------------------------------------------------------------
+12. LANGUAGE & LOCALIZATION SETTINGS (English & Turkish)
+--------------------------------------------------------------------------------
+AHowToFish supports dual languages with instant in-game switching:
+* Default server language configured in "config.yml" ("default-language: en" or "tr").
+* Language files located under "plugins/AHowToFish/lang/en.yml" and "tr.yml".
+* Players can individually pick their preferred language via "/fish language".
+* All titles, ActionBars, lore, buttons, and NPC dialogues adapt dynamically.
+
+--------------------------------------------------------------------------------
+13. PLACEHOLDERAPI IDENTIFIERS
+--------------------------------------------------------------------------------
+Identifier: %ahowtofish_<placeholder>%
+
+* %ahowtofish_level%                  - Current fishing skill level
+* %ahowtofish_xp%                     - Current experience points
+* %ahowtofish_xp_required%            - XP required for next level
+* %ahowtofish_xp_progress%            - Level progress percentage
+* %ahowtofish_fish_caught%            - Total lifetime catches
+* %ahowtofish_total_weight%           - Total lifetime weight caught (kg)
+* %ahowtofish_largest_fish%           - Name and weight of largest catch
+* %ahowtofish_largest_fish_weight%    - Numeric weight of largest catch
+* %ahowtofish_money_earned%           - Total currency earned from fish sales
+* %ahowtofish_rare_fish%              - Count of rare fish caught
+* %ahowtofish_legendary_fish%         - Count of legendary fish caught
+* %ahowtofish_current_zone%           - Name of player's current fishing zone
+* %ahowtofish_fishing_streak%         - Current successful catch streak
+* %ahowtofish_best_streak%            - Best lifetime catch streak
+* %ahowtofish_competition_rank%       - Rank in active tournament
+
+--------------------------------------------------------------------------------
+14. CONFIGURATION FILES SUMMARY
+--------------------------------------------------------------------------------
+* config.yml          - General gameplay settings, level formulas, and XP curves.
+* fish.yml            - Complete custom fish definitions, weights, and chances.
+* rarities.yml        - Rarity tiers, color schemes, and broadcast settings.
+* rods.yml            - Custom fishing rods and attribute multipliers.
+* bait.yml            - Custom bait items, durability, and effects.
+* quests.yml          - Starter, daily, and weekly fishing contracts.
+* achievements.yml    - Milestone achievements and reward configurations.
+* zones.yml           - Defined cuboid fishing regions and habitat parameters.
+* competitions.yml    - Automated tournament schedules and prize pools.
+* events.yml          - Timed server-wide boost events.
+* database.yml        - Storage backend connection parameters.
+* scoreboard.yml      - HUD, BossBar, and sidebar configuration.
+* npc.yml             - Fisherman Lucas NPC coordinates and entity data.
+* lang/en.yml         - English translation bundle.
+* lang/tr.yml         - Turkish translation bundle.
+
+--------------------------------------------------------------------------------
+15. FREQUENTLY ASKED QUESTIONS & TROUBLESHOOTING (FAQ)
+--------------------------------------------------------------------------------
+Q: Players are not receiving money when selling fish.
+A: Ensure Vault is installed along with a compatible economy provider like EssentialsX.
+   If Vault is absent, fish sales award internal XP progression instead.
+
+Q: Fish are not biting or only vanilla fish are caught.
+A: Verify that the player's fishing level meets the "min-level" requirement of defined fish.
+   If in a zone, ensure the zone has valid fish species configured.
+
+Q: How do I backup player fishing data?
+A: For SQLite, copy "plugins/AHowToFish/data.db". For MySQL, backup the "ahowtofish"
+   database using standard mysqldump tools.
+================================================================================

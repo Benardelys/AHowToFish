@@ -1,0 +1,18 @@
+competitions:
+  default-duration-seconds: 300
+  bossbar:
+    enabled: true
+    color: "BLUE"
+    overlay: "PROGRESS"
+
+  rewards:
+    1:
+      money: 5000.0
+      commands:
+        - "broadcast &6✦ &e{player} &7has won 1st Place in the Fishing Tournament!"
+    2:
+      money: 2500.0
+      commands: []
+    3:
+      money: 1000.0
+      commands: []

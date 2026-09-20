@@ -1,0 +1,110 @@
+
+config-version: 2
+
+environment:
+  production: true
+
+general:
+  default-language: "en"
+  autosave-minutes: 5
+  min-cast-delay-ticks: 10
+
+progression:
+  max-level: 100
+  base-xp: 100
+  xp-multiplier: 1.25
+  sound: "ENTITY_PLAYER_LEVELUP"
+  particle: "TOTEM_OF_UNDYING"
+  rewards:
+    5:
+      money: 500
+      commands:
+        - "broadcast &a[AHowToFish] &e{player} &7has reached Fishing Level &b5&7!"
+    10:
+      money: 1500
+      commands:
+        - "broadcast &a[AHowToFish] &e{player} &7has reached Fishing Level &b10&7!"
+    25:
+      money: 5000
+      commands:
+        - "broadcast &a[AHowToFish] &6{player} &7has attained Master Angler Rank at Level &625&7!"
+    50:
+      money: 20000
+      commands:
+        - "broadcast &a[AHowToFish] &d&l{player} &7has reached Legendary Fishing Level &d50&7!"
+    100:
+      money: 100000
+      commands:
+        - "broadcast &a[AHowToFish] &4&l{player} &7has achieved MAX FISHING LEVEL &4100&7!"
+
+treasure:
+  chance: 5.0
+  sound: "BLOCK_CHEST_OPEN"
+  particle: "TOTEM_OF_UNDYING"
+  rewards:
+    cash_small:
+      type: "MONEY"
+      amount: 250
+      chance: 40.0
+      display: "Sack of Coins ($250)"
+    cash_large:
+      type: "MONEY"
+      amount: 1500
+      chance: 15.0
+      display: "Sunken Pirate Chest ($1,500)"
+    fishing_xp:
+      type: "XP"
+      amount: 300
+      chance: 25.0
+      display: "Ancient Knowledge Bottle (+300 XP)"
+    rare_diamond:
+      type: "ITEM"
+      value: "DIAMOND"
+      amount: 3
+      chance: 15.0
+      display: "Sunken Diamonds"
+    netherite_scrap:
+      type: "ITEM"
+      value: "NETHERITE_SCRAP"
+      amount: 1
+      chance: 5.0
+      display: "Sunken Netherite Scrap"
+
+security:
+  enabled: true
+  transaction-protection: true
+  duplicate-reward-protection: true
+  inventory-protection: true
+  item-validation: true
+  gui-session-validation: true
+  gui:
+    session-timeout: 120
+  command-rate-limit: true
+  sell-rate-limit: true
+  fishing-rate-limit: true
+  suspicious-action-logging: true
+  database-integrity-check: true
+
+  rate-limits:
+    npc-interaction: 3
+    gui-action: 5
+    sell: 2
+    purchase: 2
+    reward-claim: 1
+    quest: 2
+    command: 5
+    placeholder: 10
+
+  actions:
+    CRITICAL: LOG_BLOCK_AND_ALERT
+    HIGH: LOG_BLOCK_AND_ALERT
+    WARNING: LOG_AND_BLOCK
+    MEDIUM: LOG_AND_BLOCK
+    LOW: LOG
+    INFO: LOG
+
+performance:
+  enabled: true
+  cleanup-interval-minutes: 10
+  transaction-max-age-hours: 168
+  rate-limiter-stale-minutes: 30

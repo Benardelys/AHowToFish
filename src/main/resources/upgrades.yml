@@ -1,0 +1,54 @@
+upgrades:
+  luck:
+    name: "Fisherman's Fortune"
+    description: "Permanently boosts your general luck score."
+    max-level: 5
+    base-cost: 500.0
+    cost-multiplier: 2.0
+    effect-per-level: 0.05
+    icon: "EMERALD"
+
+  double_catch:
+    name: "Twin Line Hook"
+    description: "Grants a chance to hook two fish in a single bite."
+    max-level: 5
+    base-cost: 1000.0
+    cost-multiplier: 2.2
+    effect-per-level: 0.04
+    icon: "TRIPWIRE_HOOK"
+
+  xp_boost:
+    name: "Scholar of the Depths"
+    description: "Increases all fishing experience points earned."
+    max-level: 5
+    base-cost: 750.0
+    cost-multiplier: 2.0
+    effect-per-level: 0.10
+    icon: "EXPERIENCE_BOTTLE"
+
+  money_boost:
+    name: "Merchant's Barter"
+    description: "Increases market sell value for all catches."
+    max-level: 5
+    base-cost: 800.0
+    cost-multiplier: 2.1
+    effect-per-level: 0.10
+    icon: "GOLD_INGOT"
+
+  fish_weight:
+    name: "Heavy Line Pull"
+    description: "Increases the rolled physical weight and size of fish."
+    max-level: 5
+    base-cost: 600.0
+    cost-multiplier: 1.9
+    effect-per-level: 0.06
+    icon: "ANVIL"
+
+  treasure_chance:
+    name: "Deepsea Dredger"
+    description: "Increases the probability of hooking sunken treasure chests."
+    max-level: 5
+    base-cost: 1500.0
+    cost-multiplier: 2.5
+    effect-per-level: 0.02
+    icon: "CHEST"

@@ -1,0 +1,93 @@
+rods:
+  lucas_starter_rod:
+    display-name: "&6Lucas's Starter Rod"
+    material: FISHING_ROD
+    durability: 100
+    luck: 0.0
+    xp-multiplier: 1.0
+    money-multiplier: 1.0
+    rare-chance: 0.0
+    legendary-chance: 0.0
+    double-catch-chance: 0.0
+    required-level: 1
+    lore:
+      - "&7A simple fishing rod given"
+      - "&7to new fishermen by Fisherman Lucas."
+      - ""
+      - "&6Luck: &f+0%"
+      - "&6XP Bonus: &f+0%"
+
+  basic_rod:
+    display-name: "&fOak Fisher Rod"
+    material: FISHING_ROD
+    durability: 64
+    luck: 0.0
+    xp-multiplier: 1.0
+    money-multiplier: 1.0
+    rare-chance: 0.0
+    legendary-chance: 0.0
+    double-catch-chance: 0.0
+    required-level: 1
+    lore:
+      - "&7A simple wooden rod carved from oak."
+      - "&7Suitable for novice river anglers."
+
+  reinforced_rod:
+    display-name: "&bReinforced Iron Rod"
+    material: FISHING_ROD
+    durability: 180
+    luck: 2.0
+    xp-multiplier: 1.2
+    money-multiplier: 1.15
+    rare-chance: 5.0
+    legendary-chance: 1.0
+    double-catch-chance: 2.0
+    required-level: 10
+    lore:
+      - "&7Reinforced with heavy iron brackets"
+      - "&7and high tensile braided line."
+
+  golden_rod:
+    display-name: "&6Golden Prosperity Rod"
+    material: FISHING_ROD
+    durability: 350
+    luck: 5.0
+    xp-multiplier: 1.5
+    money-multiplier: 1.5
+    rare-chance: 10.0
+    legendary-chance: 3.0
+    double-catch-chance: 5.0
+    required-level: 25
+    lore:
+      - "&7Blessed with ancient mercantile runes"
+      - "&7that attract valuable glistening catches."
+
+  diamond_rod:
+    display-name: "&bDiamond Abyssal Rod"
+    material: FISHING_ROD
+    durability: 800
+    luck: 10.0
+    xp-multiplier: 2.0
+    money-multiplier: 1.8
+    rare-chance: 20.0
+    legendary-chance: 8.0
+    double-catch-chance: 10.0
+    required-level: 50
+    lore:
+      - "&7Engineered with hardened diamond alloys"
+      - "&7capable of dredging titanic deepsea monsters."
+
+  mythic_rod:
+    display-name: "&d&lPoseidon's Calamity"
+    material: FISHING_ROD
+    durability: -1
+    luck: 25.0
+    xp-multiplier: 3.5
+    money-multiplier: 2.5
+    rare-chance: 40.0
+    legendary-chance: 20.0
+    double-catch-chance: 25.0
+    required-level: 80
+    lore:
+      - "&dForged within the heart of an ocean trench."
+      - "&7Commands the currents of the seven seas."

@@ -1,0 +1,107 @@
+name: AHowToFish
+version: 1.0.0
+main: com.ardelys.ahowtofish.AHowToFishPlugin
+api-version: '1.21'
+author: Ardelys
+description: Advanced Fishing & Fishing Progression Plugin for Paper
+website: https://github.com/Ardelys/AHowToFish
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - WorldGuard
+
+commands:
+  ahowtofish:
+    description: Main command for AHowToFish
+    aliases: [fishing, fish]
+    permission: ahowtofish.use
+    usage: /ahowtofish [subcommand]
+  fishing:
+    description: Alias for /ahowtofish
+    permission: ahowtofish.use
+    usage: /fishing [subcommand]
+  fish:
+    description: Alias for /ahowtofish
+    permission: ahowtofish.use
+    usage: /fish [subcommand]
+
+permissions:
+  ahowtofish.use:
+    description: Allows accessing the basic fishing commands and menus.
+    default: true
+  ahowtofish.menu:
+    description: Allows opening the fishing main menu.
+    default: true
+  ahowtofish.stats:
+    description: Allows viewing fishing statistics.
+    default: true
+  ahowtofish.collection:
+    description: Allows viewing the fish collection journal.
+    default: true
+  ahowtofish.quests:
+    description: Allows viewing and doing fishing quests.
+    default: true
+  ahowtofish.achievements:
+    description: Allows viewing achievements.
+    default: true
+  ahowtofish.shop:
+    description: Allows opening the fish market and shop.
+    default: true
+  ahowtofish.sell:
+    description: Allows selling held fish.
+    default: true
+  ahowtofish.sellall:
+    description: Allows selling all fish in inventory.
+    default: true
+  ahowtofish.leaderboard:
+    description: Allows viewing leaderboards.
+    default: true
+  ahowtofish.admin:
+    description: Full administrative control over AHowToFish.
+    default: op
+    children:
+      ahowtofish.admin.reload: true
+      ahowtofish.admin.give: true
+      ahowtofish.admin.setlevel: true
+      ahowtofish.admin.setxp: true
+      ahowtofish.admin.reset: true
+      ahowtofish.admin.competition: true
+      ahowtofish.admin.event: true
+      ahowtofish.admin.zone: true
+      ahowtofish.admin.npc: true
+      ahowtofish.admin.quest: true
+      ahowtofish.admin.starter.reset: true
+      ahowtofish.admin.security: true
+      ahowtofish.admin.securitycheck: true
+      ahowtofish.admin.diagnostics: true
+      ahowtofish.admin.performance: true
+      ahowtofish.admin.alerts: true
+      ahowtofish.admin.language: true
+  ahowtofish.admin.npc:
+    description: Allows managing Fisherman Lucas NPC.
+    default: op
+  ahowtofish.admin.quest:
+    description: Allows managing player quests administratively.
+    default: op
+  ahowtofish.admin.starter.reset:
+    description: Allows resetting player starter progression.
+    default: op
+  ahowtofish.admin.security:
+    description: Allows running security checks and diagnostics.
+    default: op
+  ahowtofish.admin.securitycheck:
+    description: Allows running comprehensive security integrity self-check.
+    default: op
+  ahowtofish.admin.diagnostics:
+    description: Allows viewing plugin performance, language, and security diagnostics.
+    default: op
+  ahowtofish.admin.performance:
+    description: Allows viewing performance metrics and memory diagnostics.
+    default: op
+  ahowtofish.admin.alerts:
+    description: Receives real-time administrative security notifications and exploit warnings.
+    default: op
+  ahowtofish.admin.language:
+    description: Allows inspecting language system status and configuration.
+    default: op
